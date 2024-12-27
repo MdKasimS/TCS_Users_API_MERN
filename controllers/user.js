@@ -27,8 +27,7 @@ async function handleUserSignup(req, res) {
 
   if (
     !body ||
-    !body.first_name ||
-    !body.last_name ||
+    !body.full_name ||
     !body.gender ||
     !body.email ||
     !body.password ||
@@ -53,11 +52,9 @@ async function handleUserSignup(req, res) {
     }
   
    let result = await User.create({
-    first_name: body.first_name,
-    last_name: body.last_name,
+    full_name: body.full_name,
     gender: body.gender,
     email: body.email,
-    job_type: body.job_type,
     password: body.password,
     contact_number: body.contact_number,
   });
